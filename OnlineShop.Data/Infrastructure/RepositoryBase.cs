@@ -11,7 +11,7 @@ namespace OnlineShop.Data.Infrastructure
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
         #region Properties
-        private TeduShopDbContext dataContext;
+        private OnlineShopDbContext dataContext;
         private readonly IDbSet<T> dbSet;
 
         protected IDbFactory DbFactory
@@ -20,7 +20,7 @@ namespace OnlineShop.Data.Infrastructure
             private set;
         }
 
-        protected TeduShopDbContext DbContext
+        protected OnlineShopDbContext DbContext
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
         }
